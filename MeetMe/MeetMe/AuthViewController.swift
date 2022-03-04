@@ -24,6 +24,7 @@ class AuthViewController: UIViewController {
     let loginButton = UIButton(backGroundColor: .white, titleColor: .buttonRed(), isShadow: true,  title: "Email", cornerRadius: 4)
     let googleButton = UIButton(backGroundColor: .white, titleColor: .black, isShadow: true,  title: "Google", cornerRadius: 4)
     
+    // MARK: - Setup constraints
     private func setUpConstrains() {
         let googleView = ButtonFormView(label: googleLabel, button: googleButton)
         let emailView = ButtonFormView(label: emailLabel, button: emailButton)
@@ -49,6 +50,7 @@ class AuthViewController: UIViewController {
     }
 }
 
+// MARK: - SwiftUI
 import SwiftUI
 
 struct AuthVcProvider: PreviewProvider {
