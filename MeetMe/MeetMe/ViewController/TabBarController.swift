@@ -15,18 +15,19 @@ class TabBarController: UITabBarController {
         let peopleVC = PeopleViewController()
         let ListVC = ListViewController()
         tabBar.tintColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
-        let peopleImage = UIImage(systemName: "bubble.left.and.bubble.right")!
-        let convImage = UIImage(systemName: "person.2")!
+        let boldConfig = UIImage.SymbolConfiguration(weight: .medium)
+        let convImage = UIImage(systemName: "bubble.left.and.bubble.right", withConfiguration: boldConfig)!
+        let peopleImage = UIImage(systemName: "person.2", withConfiguration: boldConfig)!
         viewControllers = [
-        generateNavigationontroller(rootviewController: ListVC, title: "Conversations", image: convImage),
-        generateNavigationontroller(rootviewController: peopleVC, title: "People", image: peopleImage)
+            generateNavigationontroller(rootviewController: peopleVC, title: "People", image: peopleImage),
+        generateNavigationontroller(rootviewController: ListVC, title: "Conversations", image: convImage)
         ]
     }
     
     private func generateNavigationontroller(rootviewController: UIViewController, title: String, image: UIImage) -> UIViewController {
         let navigationVC = UINavigationController(rootViewController: rootviewController)
         navigationVC.tabBarItem.title = title
-        tabBarItem.image = image
+        navigationVC.tabBarItem.image = image
         return navigationVC
     }
 }
