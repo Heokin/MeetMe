@@ -9,7 +9,7 @@ import UIKit
 
     class AuthViewController: UIViewController {
         
-        let logoImageView = UIImageView(image: #imageLiteral(resourceName: "Logo"), contentMode: .scaleAspectFit)
+        let logoImageView = UILabel(text: "Meetme")
         
         let googleLabel = UILabel(text: "Get started with")
         let emailLabel = UILabel(text: "Or sign up with")
@@ -19,14 +19,35 @@ import UIKit
         let emailButton = UIButton(title: "Email", titleColor: .white, backgroundColor: .buttonDark())
         let loginButton = UIButton(title: "Login", titleColor: .buttonRed(), backgroundColor: .white, isShadow: true)
 
+        let loginVC = LoginViewController()
+        let signUpVc = SignUpViewController()
+        
         override func viewDidLoad() {
             super.viewDidLoad()
             
             googleButton.customizeGoogleButton()
             view.backgroundColor = .white
             setupConstraints()
+            
+            loginVC.delegate = self
+            signUpVc.delegate = self
+            
+            //MARK: - AddTarget
+            
+            emailButton.addTarget(self, action: #selector(emailButtonTaped), for: .touchUpInside)
+            loginButton.addTarget(self, action: #selector(loginButtonTaped), for: .touchUpInside)
+        }
+        @objc func emailButtonTaped() {
+            let vc = SignUpViewController()
+            present(vc, animated: true, completion: nil)
+        }
+        @objc func loginButtonTaped() {
+            let vc = LoginViewController()
+            present(vc, animated: true, completion: nil)
         }
     }
+
+
 
     // MARK: - Setup constraints
     extension AuthViewController {
@@ -54,6 +75,18 @@ import UIKit
             ])
         }
     }
+
+extension AuthViewController: AuthNavigationDelegate {
+    func toLoginVc() {
+        present(loginVC, animated: true, completion: nil)
+    }
+    
+    func toSignUpVc() {
+        present(signUpVc, animated: true, completion: nil)
+    }
+    
+    
+}
 
 // MARK: - SwiftUI
 import SwiftUI

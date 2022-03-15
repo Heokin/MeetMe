@@ -30,11 +30,37 @@ class SignUpViewController: UIViewController {
         return button
     }()
     
+    weak var delegate: AuthNavigationDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
         setupConstraints()
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc func signUpButtonTapped() {
+        AuthService.shared.register(email: emailTextField.text,
+                                    password: passwordTextField.text
+                                    , confirmPassword: confirmPasswordTextField.text) { (result) in
+            switch result {
+                
+            case .success(let user):
+                self.showAlert(with: "OK", and: "Go next") {
+                    self.present(SetupProfileViewController(), animated: true, completion: nil)
+                }
+            case .failure(let error):
+                self.showAlert(with: "Error", and: error.localizedDescription)
+            }
+        }
+    }
+    
+    @objc func loginButtonTapped() {
+        self.dismiss(animated: true) {
+            self.delegate?.toLoginVc()
+        }
     }
 }
 
@@ -108,6 +134,18 @@ struct SignUpVCProvider: PreviewProvider {
         func updateUIViewController(_ uiViewController: SignUpVCProvider.ContainerView.UIViewControllerType, context: Context) {
             
         }
+    }
+}
+
+extension UIViewController {
+    
+    func showAlert(with Title: String, and message: String, completion:  @escaping () -> Void = { }) {
+        let alertController = UIAlertController(title: Title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
+            completion()
+        }
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
     }
 }
 
