@@ -8,6 +8,6 @@ target 'MeetMe' do
   # Pods for MeetMe
 pod 'Firebase/Analytics'
 pod 'Firebase/Auth'
-
+pod 'Firebase/Firestore'
 
 end

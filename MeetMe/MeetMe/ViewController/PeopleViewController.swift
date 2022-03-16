@@ -5,10 +5,12 @@
 //  Created by Stas Dashkevich on 9.03.22.
 //
 import UIKit
+import FirebaseAuth
 
 class PeopleViewController: UIViewController {
     
-    let users = Bundle.main.decode([MUser].self, from: "users.json")
+//    let users = Bundle.main.decode([MUser].self, from: "users.json")
+    let users = [MUser]()
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, MUser>!
     
@@ -29,7 +31,22 @@ class PeopleViewController: UIViewController {
         setupCollectionView()
         createDataSource()
         reloadData(with: nil)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(signOut))
     }
+    @objc func signOut() {
+            let ac = UIAlertController(title: nil, message: "Sign out?", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            ac.addAction(UIAlertAction(title: "Sign out", style: .destructive, handler: { (_) in
+                do {
+                    try Auth.auth().signOut()
+                    UIApplication.shared.keyWindow?.rootViewController = AuthViewController()
+                } catch {
+                    
+                }
+            }))
+            present(ac, animated: true, completion: nil)
+        }
     
     private func setupCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())

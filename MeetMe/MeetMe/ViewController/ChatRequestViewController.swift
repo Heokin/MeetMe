@@ -16,7 +16,7 @@ class ChatRequestViewController: UIViewController {
     let aboutMeLabel = UILabel(text: "You have the opportunity to start a new chat", font: .systemFont(ofSize: 16, weight: .light))
     
     let acceptButton = UIButton(title: "accept", titleColor: .white, backgroundColor: .black, font: .avenir20(), isShadow: false, cornerRadius: 4)
-    let denyButton = UIButton(title: "Deny", titleColor: .white, backgroundColor: .mainWhite(), font: .avenir20(), isShadow: false, cornerRadius: 4)
+    let denyButton = UIButton(title: "Deny", titleColor: .white, backgroundColor: .darkGray, font: .avenir20(), isShadow: false, cornerRadius: 4)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +35,7 @@ class ChatRequestViewController: UIViewController {
         denyButton.layer.borderColor = #colorLiteral(red: 0.8352941176, green: 0.2, blue: 0.2, alpha: 1)
         containerView.backgroundColor = .mainWhite()
         containerView.layer.cornerRadius = 30
+        containerView.tintColor = .black
         
     }
     

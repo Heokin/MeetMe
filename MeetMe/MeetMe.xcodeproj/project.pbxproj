@@ -22,6 +22,8 @@
 		0166E40827D74D4100344839 /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0166E40727D74D4100344839 /* AddPhotoView.swift */; };
 		0166E40A27D74DC000344839 /* SetUpProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0166E40927D74DC000344839 /* SetUpProfileViewController.swift */; };
 		0166E40C27D74E9400344839 /* SegmentedControl+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0166E40B27D74E9400344839 /* SegmentedControl+Extension.swift */; };
+		01849D5E27E22D71009E1DD2 /* AuthNavigationDeleagte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01849D5D27E22D71009E1DD2 /* AuthNavigationDeleagte.swift */; };
+		01849D6027E22FE7009E1DD2 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01849D5F27E22FE7009E1DD2 /* FirestoreService.swift */; };
 		019A170D27D9392B002EFE56 /* Bundle-decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A170C27D9392B002EFE56 /* Bundle-decodable.swift */; };
 		019A170F27D9398B002EFE56 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 019A170E27D9398B002EFE56 /* activeChats.json */; };
 		019A171527D93AF0002EFE56 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 019A171427D93AF0002EFE56 /* waitingChats.json */; };
@@ -40,6 +42,7 @@
 		019A173427DA4D2F002EFE56 /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A173327DA4D2F002EFE56 /* UIImage+Ex.swift */; };
 		019A173627DA4D5A002EFE56 /* UiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A173527DA4D5A002EFE56 /* UiViewController.swift */; };
 		019A173827DA4EA9002EFE56 /* UIView+ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A173727DA4EA9002EFE56 /* UIView+ex.swift */; };
+		019E88B427E233F800A4F5C1 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019E88B327E233F800A4F5C1 /* UserError.swift */; };
 		01B46F4427D26FB000599EA7 /* ButtonformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B46F4327D26FB000599EA7 /* ButtonformView.swift */; };
 		01B46F4627D274DD00599EA7 /* StackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B46F4527D274DD00599EA7 /* StackView+Extension.swift */; };
 		01CD7F7827D299DB00EEFDC1 /* OneLineTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD7F7727D299DB00EEFDC1 /* OneLineTF.swift */; };
@@ -70,6 +73,8 @@
 		0166E40727D74D4100344839 /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
 		0166E40927D74DC000344839 /* SetUpProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpProfileViewController.swift; sourceTree = "<group>"; };
 		0166E40B27D74E9400344839 /* SegmentedControl+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentedControl+Extension.swift"; sourceTree = "<group>"; };
+		01849D5D27E22D71009E1DD2 /* AuthNavigationDeleagte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigationDeleagte.swift; sourceTree = "<group>"; };
+		01849D5F27E22FE7009E1DD2 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		019A170C27D9392B002EFE56 /* Bundle-decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-decodable.swift"; sourceTree = "<group>"; };
 		019A170E27D9398B002EFE56 /* activeChats.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
 		019A171427D93AF0002EFE56 /* waitingChats.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
@@ -88,6 +93,7 @@
 		019A173327DA4D2F002EFE56 /* UIImage+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ex.swift"; sourceTree = "<group>"; };
 		019A173527DA4D5A002EFE56 /* UiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewController.swift; sourceTree = "<group>"; };
 		019A173727DA4EA9002EFE56 /* UIView+ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ex.swift"; sourceTree = "<group>"; };
+		019E88B327E233F800A4F5C1 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
 		01B46F4327D26FB000599EA7 /* ButtonformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonformView.swift; sourceTree = "<group>"; };
 		01B46F4527D274DD00599EA7 /* StackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView+Extension.swift"; sourceTree = "<group>"; };
 		01CD7F7727D299DB00EEFDC1 /* OneLineTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTF.swift; sourceTree = "<group>"; };
@@ -164,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				019A171E27D95307002EFE56 /* SelfConfiguringCell.swift */,
+				01849D5D27E22D71009E1DD2 /* AuthNavigationDeleagte.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -242,6 +249,8 @@
 				01EE847727DFC7CB00BBF771 /* AuthService.swift */,
 				014A365327DFE47F004C6A4C /* Validators.swift */,
 				014A365527DFE63F004C6A4C /* AuthError.swift */,
+				01849D5F27E22FE7009E1DD2 /* FirestoreService.swift */,
+				019E88B327E233F800A4F5C1 /* UserError.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -396,6 +405,7 @@
 				019A173227D9ED8A002EFE56 /* InsertableTextField.swift in Sources */,
 				01E10B0027D8C62200FD4A0A /* PeopleViewController.swift in Sources */,
 				01B46F4427D26FB000599EA7 /* ButtonformView.swift in Sources */,
+				01849D6027E22FE7009E1DD2 /* FirestoreService.swift in Sources */,
 				01E10AFD27D8C58100FD4A0A /* TabBarController.swift in Sources */,
 				019A173627DA4D5A002EFE56 /* UiViewController.swift in Sources */,
 				01E10B0227D8C84900FD4A0A /* ListViewController.swift in Sources */,
@@ -403,6 +413,8 @@
 				0166E40A27D74DC000344839 /* SetUpProfileViewController.swift in Sources */,
 				01CD7F7A27D29A3C00EEFDC1 /* SignUpViewController.swift in Sources */,
 				010ED4B827D261D2009BD29E /* UIFont+Extension.swift in Sources */,
+				019E88B427E233F800A4F5C1 /* UserError.swift in Sources */,
+				01849D5E27E22D71009E1DD2 /* AuthNavigationDeleagte.swift in Sources */,
 				010ED4A227D23923009BD29E /* SceneDelegate.swift in Sources */,
 				019A172A27D9EB8F002EFE56 /* ProfileViewController.swift in Sources */,
 				0166E40827D74D4100344839 /* AddPhotoView.swift in Sources */,

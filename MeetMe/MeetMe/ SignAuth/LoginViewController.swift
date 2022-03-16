@@ -8,11 +8,6 @@
 import Foundation
 import UIKit
 
-protocol AuthNavigationDelegate: AnyObject {
-    func toLoginVc()
-    func toSignUpVc()
-}
-
 class LoginViewController: UIViewController {
     
     let welcomeLabel = UILabel(text: "Welcome back!", font: .avenir26())
@@ -53,7 +48,16 @@ class LoginViewController: UIViewController {
             switch result {
                 
             case .success(let user):
-                self.showAlert(with: "Success", and: "Login")
+                self.showAlert(with: "Success", and: "Login"){
+                FirestoreService.shared.getUserdata(user: user) { (result) in
+                    switch result {
+                    case .success(let muser):
+                        self.present(MainTabBarController(), animated: true, completion: nil)
+                    case .failure(let error):
+                        self.present(SetupProfileViewController(currentUser: user), animated: true, completion: nil)
+                    }
+                }
+                }
             case .failure(let error):
                 self.showAlert(with: "Error", and: error.localizedDescription)
             }
